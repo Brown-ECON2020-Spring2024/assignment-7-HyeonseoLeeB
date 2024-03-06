@@ -1,5 +1,6 @@
 ## Run all code for the project
-
+renv::restore()
+y
 ## Get raw data
 source("./code/get_gapminder_data.r")
 
@@ -14,4 +15,13 @@ source("./code/make_figures.r")
 
 ## Run Tests
 testthat::local_edition(3)
+testthat::test_dir("tests")
+
+
+## HW. Adding more tests 
+renv::install("testdat")
+y
+library(testdat)
+renv::snapshot()
+y
 testthat::test_dir("tests")
